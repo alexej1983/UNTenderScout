@@ -1,15 +1,15 @@
-# fly.toml app configuration file generated for app-summer-thunder-5201 on 2026-03-29T21:01:31Z
+# fly.toml app configuration file generated for untenderscout on 2026-03-29T21:05:30Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'app-summer-thunder-5201'
+app = 'untenderscout'
 primary_region = 'iad'
 
 [build]
 
 [http_service]
-  internal_port = 8080
+  internal_port = 8000
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
@@ -20,4 +20,4 @@ primary_region = 'iad'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 256
+  memory_mb = 1024
