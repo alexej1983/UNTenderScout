@@ -1,0 +1,23 @@
+# Cloudflare Pages configuration
+# Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+
+name = "untenderscout"
+
+# The directory Cloudflare Pages serves static assets from.
+# index.html lives in static/, so point Pages at that directory.
+pages_build_output_dir = "static"
+
+# Use a recent compatibility date to get modern Workers APIs.
+compatibility_date = "2024-09-23"
+
+# ---------------------------------------------------------------------------
+# Environment variables
+# ---------------------------------------------------------------------------
+# Do NOT store real API keys here. Set them in the Cloudflare dashboard:
+#   Pages → your project → Settings → Environment Variables → Add variable
+#   Variable name : ANTHROPIC_API_KEY
+#   Value         : sk-ant-...
+#
+# For local development with `wrangler pages dev`, create a .dev.vars file
+# (already listed in .gitignore) – see .dev.vars.example for the template.
+# ---------------------------------------------------------------------------
