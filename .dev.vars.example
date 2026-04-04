@@ -1,0 +1,10 @@
+# Local development environment variables for Cloudflare Pages / wrangler
+# Copy this file to .dev.vars and fill in your real values.
+# .dev.vars is git-ignored and NEVER committed to version control.
+#
+# Usage:
+#   cp .dev.vars.example .dev.vars
+#   # edit .dev.vars and add your key
+#   wrangler pages dev static --compatibility-date=2024-09-23
+
+ANTHROPIC_API_KEY=sk-ant-your-key-here
