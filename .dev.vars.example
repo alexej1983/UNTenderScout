@@ -4,7 +4,7 @@
 #
 # Usage:
 #   cp .dev.vars.example .dev.vars
-#   # edit .dev.vars and add your key
-#   wrangler pages dev static --compatibility-date=2024-09-23
+#   # edit .dev.vars and paste your real key
+#   wrangler pages dev static
 
 ANTHROPIC_API_KEY=sk-ant-your-key-here
