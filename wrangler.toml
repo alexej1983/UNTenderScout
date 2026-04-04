@@ -1,23 +1,30 @@
-# Cloudflare Pages configuration
+# Cloudflare Pages – Functions configuration
 # Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+#
+# NOTE: pages_build_output_dir is intentionally NOT set here.
+# When deploying via the Cloudflare dashboard (Git-connected project), set:
+#   Build output directory → static
+# in Pages → your project → Settings → Builds & deployments.
+# Putting pages_build_output_dir in wrangler.toml causes `wrangler deploy`
+# (a Workers command) to be invoked instead of `wrangler pages deploy`,
+# which produces the "wrong command" error.
 
 name = "untenderscout"
-
-# The directory Cloudflare Pages serves static assets from.
-# index.html lives in static/, so point Pages at that directory.
-pages_build_output_dir = "static"
 
 # Use a recent compatibility date to get modern Workers APIs.
 compatibility_date = "2024-09-23"
 
 # ---------------------------------------------------------------------------
-# Environment variables
+# Adding your API key
 # ---------------------------------------------------------------------------
-# Do NOT store real API keys here. Set them in the Cloudflare dashboard:
+# Production (Cloudflare dashboard):
 #   Pages → your project → Settings → Environment Variables → Add variable
 #   Variable name : ANTHROPIC_API_KEY
 #   Value         : sk-ant-...
+#   Then redeploy.
 #
-# For local development with `wrangler pages dev`, create a .dev.vars file
-# (already listed in .gitignore) – see .dev.vars.example for the template.
+# Local development (`wrangler pages dev`):
+#   cp .dev.vars.example .dev.vars
+#   # edit .dev.vars and paste your real key
+#   wrangler pages dev static --compatibility-date=2024-09-23
 # ---------------------------------------------------------------------------
